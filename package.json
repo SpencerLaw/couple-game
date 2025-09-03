@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A game for couples, now named 心跳契约 (Heartbeat Pact).",
   "dependencies": {
     "express": "^5.1.0"
   }

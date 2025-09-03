@@ -32,7 +32,7 @@
         "selectedMsg": "已选择[{stage}]，点击开始！"
     },
     "ja": {
-        "title": "カップルゲーム",
+        "title": "心拍の契約",
         "wheelMode": "ホイールモード",
         "slotMachineMode": "スロットマシンモード",
         "ambiguous": "親密",
@@ -47,4 +47,5 @@
         "initialMsg": "モードとステージを選択し、[スタート]をクリックします！",
         "selectedMsg": "[{stage}]を選択しました。[スタート]をクリックしてください！"
     }
-}
+}   }
+}}
