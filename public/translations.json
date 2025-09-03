@@ -1,6 +1,6 @@
 {
     "en": {
-        "title": "Couple's Game",
+        "title": "Heartbeat Pact",
         "wheelMode": "Wheel Mode",
         "slotMachineMode": "Slot Machine Mode",
         "ambiguous": "Intimate",
@@ -16,7 +16,7 @@
         "selectedMsg": "Selected [{stage}], click Start!"
     },
     "zh": {
-        "title": "情侣游戏",
+        "title": "心跳契约",
         "wheelMode": "转盘模式",
         "slotMachineMode": "老虎机模式",
         "ambiguous": "暧昧",
@@ -47,5 +47,4 @@
         "initialMsg": "モードとステージを選択し、[スタート]をクリックします！",
         "selectedMsg": "[{stage}]を選択しました。[スタート]をクリックしてください！"
     }
-}   }
-}}
+}
