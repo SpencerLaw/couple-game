@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couple's Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+    </div>
+    <div class="main-container">
+        <h1 data-i18n="title">Couple's Game</h1>
+
+        <!-- Mode switcher hidden - only slot machine mode -->
+        <div class="mode-switcher" style="display: none;">
+            <button class="mode-btn" data-mode="wheel" data-i18n="wheelMode">Wheel Mode</button>
+            <button class="mode-btn active" data-mode="slot" data-i18n="slotMachineMode">Slot Machine Mode</button>
+        </div>
+
+        <div class="stage-buttons">
+            <button class="stage-btn" data-stage="ambiguous" data-i18n="ambiguous">Tease</button>
+            <button class="stage-btn" data-stage="advanced" data-i18n="advanced">Advanced</button>
+            <button class="stage-btn" data-stage="passionate" data-i18n="passionate">Passionate</button>
+        </div>
+
+        <div class="game-container">
+            <div class="wheel-container" style="display: none;">
+                <div class="wheel"></div>
+                <div class="pointer"></div>
+            </div>
+            <div class="slot-machine-container">
+                <div class="slot-window">
+                    <div id="slot-reel"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="spin-btn" data-i18n="start">Start</button>
+        <div id="result" style="display: none;">
+            <p id="result-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
