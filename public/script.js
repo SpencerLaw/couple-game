@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultText = document.getElementById('result-text');
     const slotReel = document.getElementById('slot-reel');
     const langButtons = document.querySelectorAll('.lang-btn');
+    const themeButtons = document.querySelectorAll('.theme-btn');
 
     let currentMode = 'slot';
     let currentStage = null;
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let translations = {};
     let isSpinning = false;
     let currentLang = localStorage.getItem('lang') || 'en';
+    let currentTheme = localStorage.getItem('theme') || 'default';
 
     async function setLanguage(lang) {
         currentLang = lang;
@@ -55,6 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             langButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+        });
+    });
+
+    function setTheme(theme) {
+        document.body.className = ''; // Clear existing theme classes
+        if (theme !== 'default') {
+            document.body.classList.add(`theme-${theme}`);
+        }
+        localStorage.setItem('theme', theme);
+        currentTheme = theme;
+
+        themeButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.theme === theme);
+        });
+    }
+
+    themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.dataset.theme;
+            setTheme(theme);
         });
     });
 
@@ -315,6 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         setLanguage(savedLang);
+
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        setTheme(savedTheme);
     }
 
     modeButtons.forEach(button => button.addEventListener('click', handleModeSwitch));

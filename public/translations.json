@@ -13,7 +13,10 @@
         "selectStage": "Please select a stage first!",
         "noDares": "No dares available for this stage.",
         "initialMsg": "Select a mode and stage, then click Start!",
-        "selectedMsg": "Selected [{stage}], click Start!"
+        "selectedMsg": "Selected [{stage}], click Start!",
+        "themeDefault": "Default",
+        "themeTwilight": "Twilight",
+        "themeCyber": "Cyber"
     },
     "zh": {
         "title": "心跳契约",
@@ -29,7 +32,10 @@
         "selectStage": "请先选择一个阶段！",
         "noDares": "这个阶段没有可用的大冒险。",
         "initialMsg": "选择一个模式和一个阶段，然后点击开始！",
-        "selectedMsg": "已选择[{stage}]，点击开始！"
+        "selectedMsg": "已选择[{stage}]，点击开始！",
+        "themeDefault": "默认",
+        "themeTwilight": "暮色",
+        "themeCyber": "赛博"
     },
     "ja": {
         "title": "心拍の契約",
@@ -45,6 +51,9 @@
         "selectStage": "最初にステージを選択してください！",
         "noDares": "このステージで利用可能な挑戦はありません。",
         "initialMsg": "モードとステージを選択し、[スタート]をクリックします！",
-        "selectedMsg": "[{stage}]を選択しました。[スタート]をクリックしてください！"
+        "selectedMsg": "[{stage}]を選択しました。[スタート]をクリックしてください！",
+        "themeDefault": "デフォルト",
+        "themeTwilight": "黄昏",
+        "themeCyber": "サイバー"
     }
 }
