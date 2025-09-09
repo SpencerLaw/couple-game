@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #8b5cf6;
-    --primary-light: #a78bfa;
-    --primary-dark: #7c3aed;
-    --accent-color: #ec4899;
-    --accent-light: #f472b6;
-    --text-color: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --bg-dark: #0f172a;
-    --bg-card: rgba(30, 41, 59, 0.7);
-    --border-color: rgba(148, 163, 184, 0.2);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --gradient-start: #4338ca;
-    --gradient-mid: #6d28d9;
-    --gradient-end: #7e22ce;
+    /* Modern Minimalist with Sci-Fi Accents Palette */
+    --primary-color: #00C0FF; /* Electric Blue */
+    --primary-light: #66E0FF; /* Lighter Electric Blue */
+    --primary-dark: #0099CC; /* Darker Electric Blue */
+    --accent-color: #FF00C0; /* Vibrant Pink/Magenta */
+    --accent-light: #FF66E0; /* Lighter Vibrant Pink */
+    --text-color: #E0E0E0;   /* Soft Light Grey */
+    --text-secondary: #A0A0A0; /* Medium Grey */
+    --bg-dark: #1A1A2E;      /* Deep Midnight Blue */
+    --bg-card: rgba(30, 30, 50, 0.8); /* Semi-transparent Dark Blue/Purple */
+    --border-color: rgba(0, 192, 255, 0.3); /* Subtle Electric Blue Border */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Deeper Shadow */
+    --glow-color: rgba(0, 192, 255, 0.1); /* Default Glow Color (from primary) */
+    --gradient-start: #00C0FF; /* Electric Blue */
+    --gradient-mid: #8000FF; /* Deep Violet */
+    --gradient-end: #FF00C0; /* Vibrant Pink */
 }
 
 @keyframes spin {
@@ -42,24 +44,18 @@
 
 @keyframes finalResultGlow {
     0%, 100% {
-        box-shadow: 
-            0 10px 30px rgba(0, 0, 0, 0.2),
-            0 0 20px rgba(139, 92, 246, 0.4),
-            0 0 40px rgba(236, 72, 153, 0.2);
-        text-shadow: 
-            0 0 10px rgba(255, 255, 255, 0.8),
-            0 0 20px rgba(139, 92, 246, 0.8),
-            0 0 30px rgba(236, 72, 153, 0.6);
+            box-shadow: 0 10px 30px var(--shadow-color), 0 0 20px var(--primary-color), 0 0 40px var(--accent-color); /* Updated to use theme variables */
+            text-shadow: 0 0 8px var(--text-color), 0 0 16px var(--primary-light), 0 0 32px var(--accent-light);
     }
     50% {
         box-shadow: 
-            0 10px 30px rgba(0, 0, 0, 0.2),
-            0 0 30px rgba(139, 92, 246, 0.6),
-            0 0 50px rgba(236, 72, 153, 0.4);
+            0 10px 30px var(--shadow-color),
+            0 0 30px var(--primary-color),
+            0 0 50px var(--accent-color);
         text-shadow: 
-            0 0 15px rgba(255, 255, 255, 0.9),
-            0 0 25px rgba(139, 92, 246, 0.9),
-            0 0 35px rgba(236, 72, 153, 0.7);
+            0 0 15px var(--text-color),
+            0 0 25px var(--primary-color),
+            0 0 35px var(--accent-color);
     }
 }
 
@@ -97,7 +93,7 @@ body {
     -webkit-backdrop-filter: blur(16px);
     border-radius: 24px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 50px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 20px 40px var(--shadow-color), 0 0 50px var(--glow-color);
     padding: 2.5rem;
     width: 100%;
     max-width: 520px;
@@ -168,7 +164,7 @@ h1::after {
 .stage-btn {
     padding: 0.8rem 1.5rem;
     border: none;
-    background: rgba(30, 41, 59, 0.5);
+    background: var(--bg-card); /* Updated to use theme variable */
     color: var(--text-secondary);
     border-radius: 12px;
     cursor: pointer;
@@ -196,14 +192,14 @@ h1::after {
 
 .stage-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px var(--shadow-color); /* Updated to use theme variable */
     color: var(--text-color);
 }
 
 .stage-btn.active {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 5px 15px var(--glow-color); /* Updated to use theme variable */
 }
 
 .stage-btn:hover::before {
@@ -249,10 +245,10 @@ h1::after {
     font-size: clamp(1rem, 4.5vw, 1.25rem);
     font-weight: 600;
     color: #fff;
-    background: rgba(30, 41, 59, 0.85);
+    background: var(--bg-card); /* Updated to use theme variable */
     border-radius: 18px;
-    box-shadow: 0 0 24px 4px rgba(139,92,246,0.25);
-    text-shadow: 0 0 8px #fff, 0 0 16px #a78bfa, 0 0 32px #f472b6;
+    box-shadow: 0 0 24px 4px var(--glow-color); /* Updated to use theme variable */ /* Will be updated in next step */
+    text-shadow: 0 0 8px var(--text-color), 0 0 16px var(--primary-light), 0 0 32px var(--accent-light); /* Updated to use theme variables */ /* Will be updated in next step */
     line-height: 1.5;
     word-break: break-word;
     hyphens: auto;
@@ -276,14 +272,14 @@ h1::after {
 #slot-reel p.final-result {
     font-weight: 700;
     font-size: clamp(1.1rem, 5vw, 1.375rem);
-    background: rgba(15, 23, 42, 0.7);
+    background: var(--bg-card); /* Updated to use theme variable */
     border-radius: 16px;
     opacity: 1;
     animation: finalResultGlow 3s ease-in-out infinite alternate;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(236, 72, 153, 0.2);
+    box-shadow: 0 10px 30px var(--shadow-color), 0 0 20px var(--primary-color), 0 0 40px var(--accent-color); /* Updated to use theme variables */
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(236, 72, 153, 0.4);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(236, 72, 153, 0.6);
+    border: 1px solid var(--accent-color); /* Updated to use theme variable */
+    text-shadow: 0 0 10px var(--text-color), 0 0 20px var(--primary-color), 0 0 30px var(--accent-color); /* Updated to use theme variables */
 }
 
 #slot-reel p.final-result::before {
@@ -301,7 +297,7 @@ h1::after {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 25px var(--glow-color); /* Updated to use theme variable */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 1rem;
     position: relative;
@@ -321,7 +317,7 @@ h1::after {
 
 #spin-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 15px 30px var(--glow-color); /* Updated to use theme variable */
 }
 
 #spin-btn:hover::before {
@@ -330,11 +326,11 @@ h1::after {
 
 #spin-btn:active {
     transform: translateY(0);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 5px 15px var(--glow-color); /* Updated to use theme variable */
 }
 
 #spin-btn:disabled {
-    background: rgba(30, 41, 59, 0.5);
+    background: var(--bg-card); /* Updated to use theme variable */
     box-shadow: none;
     cursor: not-allowed;
     opacity: 0.6;
@@ -357,7 +353,7 @@ h1::after {
     display: flex;
     justify-content: center; /* Centers buttons inside */
     gap: 0.5rem;
-    background: rgba(15, 23, 42, 0.5);
+    background: var(--bg-card); /* Updated to use theme variable */
     padding: 0.375rem;
     border-radius: 10px;
     backdrop-filter: blur(8px);
@@ -384,41 +380,42 @@ h1::after {
 .lang-btn.active, .theme-btn.active {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
-    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 2px 8px var(--glow-color); /* Updated to use theme variable */
 }
 
 /* --- Theme Colors --- */
 body.theme-twilight {
-    --primary-color: #7e57c2; /* Deep Purple */
-    --primary-light: #9575cd;
-    --primary-dark: #673ab7;
-    --accent-color: #ec407a; /* Soft Pink */
-    --accent-light: #f06292;
-    --text-color: #ede7f6;
-    --text-secondary: #d1c4e9;
-    --bg-dark: #1a1423; /* Very Dark Blue/Purple */
-    --bg-card: rgba(49, 38, 71, 0.7);
-    --border-color: rgba(209, 196, 233, 0.2);
-    --gradient-start: #4a148c;
-    --gradient-mid: #880e4f;
-    --gradient-end: #d500f9;
+    /* Ethereal Twilight Theme: Soft Blues, Purples, and Pinks */
+    --primary-color: #8A2BE2; /* Blue Violet */
+    --primary-light: #A052EE; /* Medium Orchid */
+    --primary-dark: #6A0DAD; /* Dark Orchid */
+    --accent-color: #FF69B4; /* Hot Pink */
+    --accent-light: #FFB6C1; /* Light Pink */
+    --text-color: #F8F8FF;   /* Ghost White */
+    --text-secondary: #D8BFD8; /* Thistle */
+    --bg-dark: #191970;      /* Midnight Blue */
+    --bg-card: rgba(25, 25, 112, 0.7); /* Semi-transparent Royal Blue */
+    --border-color: rgba(255, 105, 180, 0.3); /* Pink Border */
+    --gradient-start: #4682B4; /* Steel Blue */
+    --gradient-mid: #8A2BE2; /* Blue Violet */
+    --gradient-end: #FF69B4; /* Hot Pink */
 }
 
 body.theme-cyber {
-    /* A high-contrast, sci-fi theme with magenta and cyan accents */
-    --primary-color: #f400a1;   /* Vibrant Magenta */
-    --primary-light: #ff69b4;  /* Lighter Pink */
-    --primary-dark: #c70083;   /* Darker Magenta */
-    --accent-color: #00f0ff;    /* Electric Cyan */
-    --accent-light: #7cffff;   /* Lighter Cyan */
-    --text-color: #f0f0f0;      /* Off-White */
-    --text-secondary: #a0a0a0; /* Cool Grey */
-    --bg-dark: #0a0a1a;         /* Deep Space Blue/Black */
-    --bg-card: rgba(20, 20, 40, 0.75); /* Semi-transparent Dark Blue/Purple */
-    --border-color: rgba(0, 240, 255, 0.4); /* Cyan Border */
-    --gradient-start: #f400a1; /* Magenta */
-    --gradient-mid: #7a00f4;   /* Deep Purple */
-    --gradient-end: #00f0ff;   /* Cyan */
+    /* Intense Cyberpunk Theme: Pure Black, Vibrant Pink, Electric Blue */
+    --primary-color: #FF00C0;   /* Vibrant Pink/Magenta */
+    --primary-light: #FF66E0;  /* Lighter Vibrant Pink */
+    --primary-dark: #CC0099;   /* Darker Vibrant Pink */
+    --accent-color: #00C0FF;    /* Electric Blue */
+    --accent-light: #66E0FF;   /* Lighter Electric Blue */
+    --text-color: #FFFFFF;      /* Pure White */
+    --text-secondary: #B0B0B0; /* Slightly Darker Grey */
+    --bg-dark: #000000;         /* Pure Black */
+    --bg-card: rgba(10, 10, 10, 0.85); /* Very Dark, Semi-transparent */
+    --border-color: rgba(255, 0, 192, 0.5); /* More Intense Pink Border */
+    --gradient-start: #FF00C0; /* Vibrant Pink */
+    --gradient-mid: #8000FF;   /* Deep Violet */
+    --gradient-end: #00C0FF;   /* Electric Blue */
 }
 
 /* --- Responsive Design --- */
