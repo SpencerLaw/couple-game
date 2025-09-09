@@ -22,9 +22,11 @@
     100% { transform: rotate(360deg); }
 }
 
-@keyframes gradientShift {
+@keyframes backgroundPan {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
     100% { background-position: 0% 50%; }
 }
 
@@ -79,31 +81,12 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 1rem;
-    background: var(--bg-dark);
     color: var(--text-color);
     position: relative;
     overflow-x: hidden;
-}
-
-body::before, body::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: -1;
-}
-
-body::before {
     background: linear-gradient(125deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    opacity: 0.7;
-}
-
-body::after {
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 40%);
-    pointer-events: none;
+    animation: backgroundPan 10s linear infinite;
 }
 
 /* --- Main Container --- */
@@ -422,19 +405,20 @@ body.theme-twilight {
 }
 
 body.theme-cyber {
-    --primary-color: #00b8d4; /* Cyan */
-    --primary-light: #84ffff;
-    --primary-dark: #00838f;
-    --accent-color: #03a9f4; /* Bright Blue */
-    --accent-light: #64c1ff;
-    --text-color: #ffffff;
-    --text-secondary: #e0e0e0;
-    --bg-dark: #000000; /* Black */
-    --bg-card: rgba(10, 10, 10, 0.7);
-    --border-color: rgba(3, 169, 244, 0.4);
-    --gradient-start: #00838f;
-    --gradient-mid: #00b8d4;
-    --gradient-end: #03a9f4;
+    /* A high-contrast, sci-fi theme with magenta and cyan accents */
+    --primary-color: #f400a1;   /* Vibrant Magenta */
+    --primary-light: #ff69b4;  /* Lighter Pink */
+    --primary-dark: #c70083;   /* Darker Magenta */
+    --accent-color: #00f0ff;    /* Electric Cyan */
+    --accent-light: #7cffff;   /* Lighter Cyan */
+    --text-color: #f0f0f0;      /* Off-White */
+    --text-secondary: #a0a0a0; /* Cool Grey */
+    --bg-dark: #0a0a1a;         /* Deep Space Blue/Black */
+    --bg-card: rgba(20, 20, 40, 0.75); /* Semi-transparent Dark Blue/Purple */
+    --border-color: rgba(0, 240, 255, 0.4); /* Cyan Border */
+    --gradient-start: #f400a1; /* Magenta */
+    --gradient-mid: #7a00f4;   /* Deep Purple */
+    --gradient-end: #00f0ff;   /* Cyan */
 }
 
 /* --- Responsive Design --- */
